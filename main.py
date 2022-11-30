@@ -3,13 +3,16 @@ from sentiment_ai_model import sentiment_model
 
 
 def main():
-    url = 'https://www.youtube.com/watch?v=Ze1C1kyETi8&t=506s'
-
+    # INPUTS
+    url = 'https://www.youtube.com/watch?v=H9AAnV59ddE'
     path_to_driver = "C:/SeleniumDrivers/chromedriver.exe"
+    c_loops = 5000
+    #
+
     driver = activate_chrome_driver(path_to_driver)
 
     comments_scraper = CommentsScraper(url)
-    comments = comments_scraper.scrape_comments(driver)
+    comments = comments_scraper.scrape_comments(driver, c_loops)
 
     tokenizer = sentiment_model.model_tokenizer()
     model = sentiment_model.pre_trained_model()
