@@ -4,7 +4,7 @@ from sentiment_ai_model import sentiment_model
 
 def main():
     # INPUTS
-    url = 'https://www.youtube.com/watch?v=H9AAnV59ddE'
+    url = input("URL: ")
     path_to_driver = "C:/SeleniumDrivers/chromedriver.exe"
     c_loops = 5000
     #
